@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>scroll</title>
+	<style>
+		body{
+			height: 1500px;
+		}
+	</style>
+</head>
+<body>
+	<p>hahhahahahahahah好无聊哇</p>
+	<script>
+		window.onscroll=debounce(handler,5000);
+		
+		function debounce(handler,wait){
+			var lasttime=0;
+			return function(){
+				var nowtime=new Date().getTime();
+				if(nowtime-lasttime>wait){
+					handler();
+					lasttime=nowtime;
+				}
+				
+			}
+		}
+		
+
+		function handler(){
+			console.log(this);
+			console.log("真是无聊死了");
+		}
+	</script>
+</body>
+</html>
